@@ -1,0 +1,35 @@
+# Builds both Mac installers (Apple Silicon and Intel) on GitHub's own Macs and publishes them on the Releases page.
+# How to use: open the Actions tab, choose "Build Mac installers", click "Run workflow".
+name: Build Mac installers
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build both DMGs
+        run: |
+          chmod +x scripts/*.sh
+          scripts/make-installer.sh
+          ls -la dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MeetingAgent-Mac
+          path: dist/*.dmg
+      - name: Publish to Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Resources/Info.plist)"
+          TAG="mac-v$VERSION"
+          NOTES="Meeting Agent for Mac $VERSION. Pick the DMG for your Mac: arm64 is for Apple Silicon (M1 and newer), intel is for Intel Macs. Open the DMG, drag Meeting Agent to Applications, then right-click it and choose Open the first time, because the app is not notarized. Report problems at https://github.com/amithkshinde/meeting-agent-mac/issues"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/*.dmg --clobber
+          else
+            gh release create "$TAG" dist/*.dmg --target "$GITHUB_SHA" --title "Meeting Agent for Mac $VERSION" --notes "$NOTES"
+          fi
