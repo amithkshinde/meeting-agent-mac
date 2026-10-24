@@ -1,0 +1,22 @@
+name: Something broke
+description: The app crashed, did the wrong thing, or didn't build.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: If you can, say what you clicked just before.
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: App version, macOS version and chip
+      description: "In the app: Feedback > Include technical details > Exactly what will be sent."
+      placeholder: "0.0.1, macOS 26, Apple M2"
+  - type: input
+    id: contact
+    attributes:
+      label: How can I reach you? (optional)
+      description: Leave empty to stay anonymous. An email lets me ask a follow-up question.

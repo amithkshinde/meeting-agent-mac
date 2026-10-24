@@ -1,0 +1,16 @@
+name: Idea or feature request
+description: Something you wish the app did, or did differently.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What do you wish it did?
+      description: Describe the situation you were in, not only the feature. That helps most.
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How can I reach you? (optional)
+      description: Leave empty to stay anonymous. An email lets me ask a follow-up question.

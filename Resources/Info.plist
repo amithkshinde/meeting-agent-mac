@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Meeting Agent</string>
+    <key>CFBundleDisplayName</key>
+    <string>Meeting Agent</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.amithshinde.meetingagent</string>
+    <key>CFBundleExecutable</key>
+    <string>MeetingAgent</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>FeedbackEmail</key>
+    <string></string>
+    <key>FeedbackEndpoint</key>
+    <string></string>
+    <key>LSMinimumSystemVersion</key>
+    <string>15.0</string>
+    <key>NSCalendarsFullAccessUsageDescription</key>
+    <string>Meeting Agent reads your calendar to brief you before meetings and to name the people on a call.</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Meeting Agent reads your calendar to brief you before meetings and to name the people on a call.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Meeting Agent records your microphone during calls you choose to record.</string>
+    <key>NSRemindersFullAccessUsageDescription</key>
+    <string>Meeting Agent adds the promises you choose to your Reminders.</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>Meeting Agent adds the promises you choose to your Reminders.</string>
+    <key>NSScreenCaptureUsageDescription</key>
+    <string>Meeting Agent records your screen and call audio during calls you choose to record.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Meeting Agent turns call audio into a transcript on your Mac.</string>
+</dict>
+</plist>
